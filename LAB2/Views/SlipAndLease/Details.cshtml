@@ -1,0 +1,110 @@
+﻿@model LAB2.Models.SlipAndLease
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hold or Book a Slip</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SlipID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlipID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DockID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DockID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DockName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DockName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WaterService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WaterService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElectricalService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElectricalService)
+        </dd>
+
+        <dt>
+            @*Html.DisplayNameFor(model => model.HoldLease)*@
+        </dt>
+
+        <dd>
+            @*Html.DisplayFor(model => model.HoldLease)*@
+        </dd>
+
+        <dt>
+            @*Html.DisplayNameFor(model => model.LeaseID)*@
+        </dt>
+
+        <dd>
+            @*Html.DisplayFor(model => model.LeaseID)*@
+        </dd>
+
+        <dt>
+            @*Html.DisplayNameFor(model => model.CustomerID)*@
+        </dt>
+
+        <dd>
+            @*Html.DisplayFor(model => model.CustomerID)*@
+        </dd>
+
+        <dt>
+            @*Html.DisplayNameFor(model => model.FullName)*@
+        </dt>
+
+        <dd>
+            @*Html.DisplayFor(model => model.FullName)*@
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*Html.ActionLink("Edit", "Edit", new { id = Model.SlipID }) |*@
+    @Html.ActionLink("Hold", "Index", "Hold", new { Session = Model.SlipID }) |
+    @Html.ActionLink("Booking", "Index", "Booking", new { Session = Model.SlipID }) |
+
+    @Html.ActionLink("Back to List", "Index")
+</p>

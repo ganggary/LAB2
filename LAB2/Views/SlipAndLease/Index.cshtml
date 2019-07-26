@@ -1,0 +1,89 @@
+﻿@model IEnumerable<LAB2.Models.SlipDock>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of availabe Slips, Click Details to hold Slip</h2>
+
+<p>
+    @Html.ActionLink("View Leasing History", "ViewHistory")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DockID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DockName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WaterService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ElectricalService)
+        </th>
+        <th>
+            @*Html.DisplayNameFor(model => model.HoldForLease)*@
+        </th>
+        <th>
+            @*Html.DisplayNameFor(model => model.CustomerID)*@
+        </th>
+        <th>
+            @*Html.DisplayNameFor(model => model.FullName)*@
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DockID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DockName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WaterService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ElectricalService)
+        </td>
+        <td>
+            @*Html.DisplayFor(modelItem => item.HoldForLease)*@
+        </td>
+        <td>
+            @*Html.DisplayFor(modelItem => item.CustomerID)*@
+        </td>
+        <td>
+            @*Html.DisplayFor(modelItem => item.FullName)*@
+        </td>
+        <td>
+            @*Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
+            @Html.ActionLink("Hold", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Order", "Order", new { id = item.ID }) 
+            @*Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+        </td>
+    </tr>
+}
+
+</table>
